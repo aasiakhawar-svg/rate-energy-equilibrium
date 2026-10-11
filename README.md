@@ -1,1 +1,0 @@
-# rate-energy-equilibrium
