@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Lab Escape: Energetics, Rates & Equilibrium | Storyboard by Aasia Khawar</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;700;800&display=swap">
+<style>
+:root{--bg:#f5f3ff;--card:#fff;--ink:#1c1640;--mut:#5b5680;--line:#e2defa;--e:#ff5a43;--r:#0aa597;--q:#7a5cff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#13102b;--card:#1d1942;--ink:#f1eeff;--mut:#b7b0e0;--line:#332e66}}
+:root[data-theme="dark"]{--bg:#13102b;--card:#1d1942;--ink:#f1eeff;--mut:#b7b0e0;--line:#332e66}
+html{scroll-padding-top:70px;scroll-behavior:smooth}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 Nunito,system-ui,sans-serif}
+h1,h2,h3,h4{font-family:'Baloo 2',Nunito,sans-serif;margin:0;line-height:1.1}
+main{max-width:980px;margin:0 auto;padding:0 14px 60px}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:8px 14px;background:var(--ink);color:var(--bg);font-weight:800}
+.top a{color:inherit;text-decoration:none;padding:3px 10px;border-radius:99px;background:#ffffff22;font-size:14px}
+.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:20px;align-items:center;padding:34px 0 18px}
+.hero h1{font-size:clamp(34px,6vw,60px);background:linear-gradient(90deg,var(--e),var(--q),var(--r));-webkit-background-clip:text;background-clip:text;color:transparent}
+.board{display:inline-block;margin-top:10px;padding:6px 14px;border-radius:12px;background:var(--q);color:#fff;font-weight:800}
+.hero svg{width:100%;max-width:300px;justify-self:center}
+.bub{animation:rise 3s infinite ease-in}.bub:nth-child(2){animation-delay:.7s}.bub:nth-child(3){animation-delay:1.4s}.bub:nth-child(4){animation-delay:2.1s}
+@keyframes rise{0%{transform:translateY(0);opacity:0}20%{opacity:1}100%{transform:translateY(-70px);opacity:0}}
+@keyframes bob{50%{transform:translateY(-7px) rotate(-3deg)}}
+.story{background:var(--card);border:2px dashed var(--q);border-radius:18px;padding:14px 18px;margin-bottom:10px}
+.keys{font-size:26px;letter-spacing:6px}
+section.ch{margin-top:30px;border-radius:24px;background:var(--card);border:3px solid var(--c);overflow:hidden}
+.chh{background:var(--c);color:#fff;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.chh h2{font-size:clamp(24px,4vw,34px)}.chh small{display:block;font-weight:700;opacity:.9}
+.body{padding:16px 18px 20px}
+.frames{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-bottom:16px}
+.fr{border:2px solid var(--line);border-radius:16px;padding:12px;background:linear-gradient(160deg,color-mix(in srgb,var(--c) 14%,var(--card)),var(--card))}
+.em{font-size:40px;display:inline-block;animation:bob 3s infinite ease-in-out}
+.fr h4{font-size:20px;margin:4px 0}.fr p{margin:4px 0;font-size:15px}.tip{color:var(--c);font-weight:800}
+.lab{border:2px solid var(--line);border-radius:16px;padding:14px;margin:12px 0}
+.lab h3{font-size:21px;margin-bottom:6px;color:var(--c)}
+button,input,select{font:inherit}
+button{cursor:pointer;border:2px solid var(--c);background:var(--card);color:var(--ink);border-radius:12px;padding:7px 12px;margin:3px 3px 3px 0;font-weight:800;transition:transform .15s,background .2s}
+button:hover{transform:translateY(-2px)}button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--q);outline-offset:2px}
+button.on,button.ok{background:var(--c);color:#fff}button.no{background:#ffd9d4;color:#7a1608;border-color:#d33}
+input[type=text]{border:2px solid var(--line);border-radius:10px;padding:6px 10px;width:110px;background:var(--bg);color:var(--ink)}
+input[type=range]{accent-color:var(--c);width:min(220px,100%)}
+.row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.step{margin:6px 0;padding:8px 12px;border-radius:12px;background:var(--bg)}.step i{display:none;font-style:normal;color:var(--c);font-weight:800}.step.show i{display:block}
+.fb{margin:6px 0 0;font-weight:700}.qz{padding:10px 0;border-top:1px dashed var(--line)}.qz button{display:block;width:100%;text-align:left}
+details{margin-top:10px;background:var(--bg);border-radius:12px;padding:8px 12px}summary{cursor:pointer;font-weight:800}
+canvas{width:100%;max-width:340px;border-radius:12px;background:#0f0b2e;display:block}
+.bar{height:20px;border-radius:99px;background:var(--bg);overflow:hidden;border:1px solid var(--line)}.bar b{display:block;height:100%;background:var(--c);width:0}
+.tube{width:46px;height:110px;border:3px solid var(--ink);border-radius:6px 6px 24px 24px;transition:background 1s}
+.win{display:none;text-align:center;padding:26px;margin-top:24px;border-radius:24px;background:linear-gradient(90deg,var(--e),var(--q),var(--r));color:#fff}.win.show{display:block;animation:bob 1.6s infinite}
+.win h2{font-size:34px}
+@media(max-width:700px){.hero{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style></head><body>
+<div class="top"><span>Storyboard by Aasia Khawar</span><span><a href="#c1">Energetics</a> <a href="#c2">Rates</a> <a href="#c3">Equilibrium</a></span></div>
+<main>
+<header class="hero"><div>
+<h1>The Lab Escape</h1>
+<p style="font-size:19px;font-weight:800;margin:8px 0">Energetics · Rates of Reaction · Reversible Reactions &amp; Dynamic Equilibrium</p>
+<span class="board">Preparation with reference to Pearson Edexcel iGCSE Chemistry (4CH1) · IG XI October Assessment 2026</span>
+<p class="story" style="margin-top:14px">👩‍🔬 <b>Professor Crystal</b> and 🧑‍🔬 <b>Sami</b> are locked in the school lab! Three locks guard the door. Each chapter has a story, a hands-on lab and thinking questions. Solve both questions in a chapter to win its key. <b>Keys: <span class="keys" id="keys">🔒🔒🔒</span></b></p></div>
+<svg viewBox="0 0 200 220" aria-label="Bubbling flask"><defs><linearGradient id="lq" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7a5cff"/><stop offset="1" stop-color="#0aa597"/></linearGradient></defs>
+<path d="M80 20h40v60l55 105q8 20-12 20H37q-20 0-12-20L80 80z" fill="#ffffff22" stroke="#7a5cff" stroke-width="5" stroke-linejoin="round"/>
+<path d="M52 140h96l27 45q8 20-12 20H37q-20 0-12-20z" fill="url(#lq)"/>
+<g fill="#fff" opacity=".85"><circle class="bub" cx="80" cy="170" r="7"/><circle class="bub" cx="110" cy="180" r="9"/><circle class="bub" cx="130" cy="165" r="5"/><circle class="bub" cx="95" cy="185" r="6"/></g></svg></header>
+
+<section class="ch" id="c1" style="--c:var(--e)"><div class="chh"><h2>Lock 1: Energetics 🔥🧊<small>Practice Test 1 · energy changes, bond energies, salts dissolving</small></h2><span class="keys" id="k1">🔒</span></div><div class="body">
+<div class="frames" id="f1"></div>
+<div class="lab"><h3>Lab A: Energy level diagram</h3><p>Tap a button and watch the products move. Where is ΔH pointing?</p>
+<div class="row"><div><button id="bx" class="on">Exothermic</button><button id="bn">Endothermic</button><p class="fb" id="et"></p></div>
+<svg id="ed" viewBox="0 0 300 180" width="300" style="max-width:100%"><text x="6" y="14" font-size="12" fill="currentColor">Energy</text><line x1="30" y1="20" x2="30" y2="170" stroke="currentColor"/><line id="rl" x1="50" x2="130" stroke="#ff5a43" stroke-width="5"/><line id="pl" x1="170" x2="250" stroke="#0aa597" stroke-width="5"/><line id="da" x1="210" x2="210" stroke="#7a5cff" stroke-width="3" marker-end="url(#ar)"/><defs><marker id="ar" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="#7a5cff"/></marker></defs><text x="52" id="rt" font-size="12" fill="currentColor">reactants</text><text x="172" id="pt" font-size="12" fill="currentColor">products</text><text x="216" id="dt" font-size="13" fill="#7a5cff" font-weight="800">ΔH</text></svg></div></div>
+<div class="lab"><h3>Lab B: Calculation coach</h3><div><button data-p="a" class="on">Zinc + CuSO₄</button><button data-p="b">NH₄NO₃ dissolving</button></div><div id="cc"></div><button id="cn">Reveal next step</button></div>
+<div class="lab"><h3>Lab C: Bond energy challenge</h3><p>N≡N (945) + O=O (498) → 2 N=O (630 each). Work out ΔH for the reaction.</p>
+<label>ΔH = <input type="text" id="bi" placeholder="± kJ/mol" inputmode="text"></label> <button id="bc">Check</button><p class="fb" id="bf"></p></div>
+<div id="q1"></div>
+<details><summary>Think like an examiner</summary><ul><li>Polystyrene cup + lid: poor conductor, so less heat is lost to the surroundings.</li><li>Energy level diagram: label reactants and products, draw ΔH as a single-headed arrow. Salt A warms the water, so its products sit lower.</li><li>The reverse reaction has the same size of ΔH with the opposite sign: −183 kJ/mol.</li></ul></details></div></section>
+
+<section class="ch" id="c2" style="--c:var(--r)"><div class="chh"><h2>Lock 2: Rates of Reaction ⏱️⚡<small>Practice Test 2 · surface area, temperature, concentration, catalysts</small></h2><span class="keys" id="k2">🔒</span></div><div class="body">
+<div class="frames" id="f2"></div>
+<div class="lab"><h3>Lab D: Collision arena</h3><p>Green flashes are <b>successful</b> collisions (energy ≥ activation energy). Move the sliders and tick the catalyst.</p>
+<div class="row"><canvas id="cv" width="340" height="200"></canvas><div>
+<label>Temperature <input type="range" id="tp" min="20" max="80" value="30"></label><br>
+<label>Concentration <input type="range" id="cn2" min="3" max="10" value="5"></label><br>
+<label><input type="checkbox" id="ct"> Add catalyst (lower Eₐ)</label>
+<p class="fb">Successful collisions per second: <span id="rv">0</span></p><div class="bar"><b id="rb"></b></div></div></div></div>
+<div class="lab"><h3>Lab E: Magnesium race</h3><p>Time for magnesium to disappear. Spot the pattern, then predict.</p><div id="mg"></div>
+<label>Time at 60 °C = <input type="text" id="mi" placeholder="seconds"></label> <button id="mc">Check</button><p class="fb" id="mf"></p></div>
+<div class="lab"><h3>Lab F: Reaction profile</h3><div class="row"><div><button id="cx" class="on">No catalyst</button><button id="cy">With catalyst</button><p class="fb" id="ct2"></p></div>
+<svg viewBox="0 0 300 150" width="300" style="max-width:100%"><path id="pf" fill="none" stroke="#0aa597" stroke-width="5"/><line x1="125" y1="70" x2="125" id="ea" stroke="#7a5cff" stroke-width="3" marker-end="url(#ar)"/><line x1="260" y1="70" x2="260" y2="120" stroke="#ff5a43" stroke-width="3" marker-end="url(#ar)"/><text x="132" y="45" font-size="13" fill="#7a5cff" font-weight="800">Eₐ</text><text x="215" y="100" font-size="13" fill="#ff5a43" font-weight="800">ΔH</text><text x="10" y="64" font-size="11" fill="currentColor">reactants</text><text x="228" y="142" font-size="11" fill="currentColor">products</text></svg></div></div>
+<div id="q2"></div>
+<details><summary>Think like an examiner</summary><ul><li>Small chips: the curve is steeper at the start but levels off at the same final volume (same mass of CaCO₃).</li><li>Rate at 40 s: draw a tangent, then rate = change in volume ÷ change in time, in cm³/s.</li><li>Temperature answers need three ideas: faster particles, more frequent collisions, a greater proportion with energy ≥ Eₐ.</li></ul></details></div></section>
+
+<section class="ch" id="c3" style="--c:var(--q)"><div class="chh"><h2>Lock 3: Dynamic Equilibrium ⚖️🔄<small>Practice Test 3 · reversible reactions, Haber process, N₂O₄ ⇌ 2NO₂</small></h2><span class="keys" id="k3">🔒</span></div><div class="body">
+<div class="frames" id="f3"></div>
+<div class="lab"><h3>Lab G: Blue ⇌ white</h3><div class="row"><div class="tube" id="tb" style="background:#2f6bff"></div><div><button id="th">Heat it</button><button id="tw">Add water</button><p class="fb" id="tt">CuSO₄·5H₂O is blue. What happens when we heat it?</p></div></div></div>
+<div class="lab"><h3>Lab H: Equilibrium simulator</h3><p>Pick a system, then change the conditions. Which way does the position shift?</p>
+<div><button data-s="h" class="on">Haber: N₂ + 3H₂ ⇌ 2NH₃ (ΔH −92)</button><button data-s="n">N₂O₄ ⇌ 2NO₂ (ΔH +58)</button></div><div id="ec"></div>
+<div class="row" style="margin-top:8px"><div class="tube" id="gt" style="background:#cfd6f5"></div><div style="flex:1;min-width:200px"><div class="bar"><b id="gb" style="width:50%"></b></div><small>% of products in the mixture</small><p class="fb" id="gf"></p></div></div></div>
+<div class="lab"><h3>Lab I: Dynamic, not dead</h3><button id="rg">Start from pure reactants</button>
+<svg viewBox="0 0 300 150" width="300" style="max-width:100%"><style>.cv{fill:none;stroke-width:5;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 3s ease-out}.go .cv{stroke-dashoffset:0}</style><g id="gg"><path class="cv" pathLength="1" stroke="#7a5cff" d="M20 20C80 90 150 80 270 78"/><path class="cv" pathLength="1" stroke="#ff5a43" d="M20 130C80 70 150 76 270 78"/></g><text x="40" y="18" font-size="11" fill="#7a5cff">forward rate</text><text x="40" y="146" font-size="11" fill="#ff5a43">reverse rate</text><text x="170" y="65" font-size="12" fill="currentColor" font-weight="800">equal, not zero</text></svg></div>
+<div id="q3"></div>
+<details><summary>Think like an examiner</summary><ul><li>Heating NH₄Cl: white solid disappears at the bottom, then white solid reappears higher up the cooler glass as NH₃ and HCl recombine. NH₄Cl(s) ⇌ NH₃(g) + HCl(g)</li><li>Position of equilibrium: name the side with fewer gas molecules (pressure) or the endothermic direction (temperature).</li><li>A catalyst speeds up both directions equally, so the position does not move.</li></ul></details></div></section>
+
+<div class="win" id="win"><h2>🎉 Lab unlocked!</h2><p>All three keys are yours. You can now explain energy changes, rates and equilibrium. Good luck, Professor Crystal and Sami are proud of you!</p></div>
+</main>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+function tw(a,b,f,d=700){const t0=performance.now();(function s(t){const k=Math.min(1,(t-t0)/d);f(a+(b-a)*(1-Math.pow(1-k,3)));k<1&&requestAnimationFrame(s)})(t0)}
+const FR={1:[['🧪🌡️','Zinc meets copper','Sami drops zinc into blue CuSO₄. The thermometer climbs from 20.5 to 46.3 °C. Heat goes OUT: exothermic.','Exothermic: temperature rises, ΔH is negative.'],['🔨🧲','Break in, build out','Breaking bonds takes energy in. Making bonds gives energy out. ΔH = energy to break − energy released making.','Add up each side first, then subtract.'],['🧊🧂','The ice-cold salt','Ammonium nitrate dissolves and the water gets colder: energy is taken in, so it is endothermic.','Temperature falls: ΔH is positive.']],
+2:[['🪨💥','Chalk race','Powdered marble beats big chips. More surface is exposed, so collisions are more frequent.','Say "more frequent collisions", not just "more".'],['🔥🏃','Heat it up','Hotter acid: particles move faster, collide more often, and more of them have energy ≥ Eₐ.','Three ideas = three marks.'],['🛤️✨','The shortcut','A catalyst gives an alternative route with a lower activation energy. It is not used up.','Mass of catalyst is the same at the end.']],
+3:[['🔵⚪','Blue ⇌ white','Heating hydrated copper sulfate drives off water: blue to white. Add water and it turns blue again, and the tube gets hot.','Reversible: ⇌. Reverse here is exothermic.'],['🏭🧪','Haber factory','N₂ + 3H₂ ⇌ 2NH₃ in a sealed container with an iron catalyst. Nothing escapes, so equilibrium can be reached.','Sealed container = dynamic equilibrium.'],['⚖️🔄','Balanced, not stopped','At equilibrium forward and reverse reactions continue at the same rate, so concentrations stay constant.','Never write "the reaction stops".']]};
+for(const k in FR)$('#f'+k).innerHTML=FR[k].map(f=>`<article class="fr"><div class="em">${f[0]}</div><h4>${f[1]}</h4><p>${f[2]}</p><p class="tip">💡 ${f[3]}</p></article>`).join('');
+const got=[0,0,0,0];
+function unlock(c){got[c]=1;$('#k'+c).textContent='🔑';$('#keys').textContent=[1,2,3].map(i=>got[i]?'🔑':'🔒').join('');if(got[1]&&got[2]&&got[3]){$('#win').classList.add('show');$('#win').scrollIntoView({behavior:'smooth'})}}
+const QS={1:[['Test 1, Q1(f): the experiment is repeated with 100 cm³ of the same CuSO₄ and excess zinc. What is the highest temperature?',['46.3 °C (same)','72.1 °C','33.4 °C'],0,'Twice the moles release twice the heat, but twice the mass has to be warmed, so ΔT is unchanged.'],['Test 1, Q3(d): the student\'s ΔH is smaller than the data book value. Best reason?',['Heat was gained from the surroundings, so the temperature fell less','The salt did not dissolve','Breaking bonds gives out energy'],0,'Heat from the air warms the solution, so ΔT and Q are too small.']],
+2:[['Why do small marble chips react faster than large ones?',['Particles have more energy','More surface is exposed, so collisions are more frequent','The acid is more concentrated'],1,'Same mass, more surface area: more frequent collisions between acid particles and the solid.'],['Mg disappears in 40 s at 40 °C and 20 s at 50 °C. What best explains this?',['Eₐ is lowered by heat','Particles move faster, collide more often and more have energy ≥ Eₐ','The acid particles get bigger'],1,'Temperature does not change Eₐ; it changes how many particles can reach it.']],
+3:[['A student says "at equilibrium all reactions have stopped". Why is this wrong?',['Forward and reverse reactions continue at equal rates','Only the reverse reaction continues','The catalyst keeps them going'],0,'Dynamic equilibrium: both reactions go on, concentrations stay constant.'],['N₂O₄ ⇌ 2NO₂ (ΔH +58) is placed in ice water. What do you see?',['Darker brown','Paler (towards colourless)','No change'],1,'Cooling favours the exothermic reverse reaction, making more colourless N₂O₄.']]};
+for(const c in QS){const box=$('#q'+c);let ok=0;QS[c].forEach(([q,o,a,w])=>{const d=document.createElement('div');d.className='qz';d.innerHTML=`<b>🧠 ${q}</b>`;const fb=document.createElement('p');fb.className='fb';o.forEach((t,i)=>{const b=document.createElement('button');b.textContent=t;b.onclick=()=>{if(d.dataset.d)return;if(i==a){b.classList.add('ok');d.dataset.d=1;fb.textContent='✅ '+w;if(++ok==2)unlock(c)}else{b.classList.add('no');fb.textContent='🤔 Not quite. Think it through and try again.'}};d.append(b)});d.append(fb);box.append(d)})}
+// Energy level
+let py=140;const sety=y=>{py=y;$('#pl').setAttribute('y1',y);$('#pl').setAttribute('y2',y);$('#pt').setAttribute('y',y-8);$('#da').setAttribute('y1',90);$('#da').setAttribute('y2',y>90?y-6:y+6);$('#dt').setAttribute('y',(90+y)/2)};
+$('#rl').setAttribute('y1',90);$('#rl').setAttribute('y2',90);$('#rt').setAttribute('y',80);sety(140);$('#et').textContent='Products lower than reactants: energy released, ΔH negative.';
+function eset(x){$('#bx').classList.toggle('on',x);$('#bn').classList.toggle('on',!x);tw(py,x?140:40,sety);$('#et').textContent=x?'Products lower than reactants: energy released, ΔH negative.':'Products higher than reactants: energy absorbed, ΔH positive.'}
+$('#bx').onclick=()=>eset(1);$('#bn').onclick=()=>eset(0);
+// Calc coach
+const CP={a:[['Q = m × c × ΔT','50 × 4.2 × (46.3 − 20.5) = 5418 J'],['Moles of CuSO₄ (zinc is in excess)','0.50 × 50 ÷ 1000 = 0.025 mol'],['ΔH = Q ÷ n in kJ. Sign from the temperature change','5.418 ÷ 0.025 = 217. Temperature rose, so ΔH = −217 kJ/mol']],b:[['Q = m × c × ΔT (mass of water, 50 g)','50 × 4.2 × (20.4 − 14.9) = 1155 J'],['Moles of NH₄NO₃','4.0 ÷ 80 = 0.050 mol'],['ΔH = Q ÷ n in kJ. Sign from the temperature change','1.155 ÷ 0.050 = 23.1. Temperature fell, so ΔH = +23.1 kJ/mol']]};
+let cur='a',n=0;function rc(){$('#cc').innerHTML=CP[cur].map((s,i)=>`<div class="step" id="s${i}">${i+1}. ${s[0]}<i>👉 ${s[1]}</i></div>`).join('');n=0;$('#cn').style.display=''}
+$$('[data-p]').forEach(b=>b.onclick=()=>{$$('[data-p]').forEach(x=>x.classList.remove('on'));b.classList.add('on');cur=b.dataset.p;rc()});
+$('#cn').onclick=()=>{$('#s'+n).classList.add('show');if(++n>2)$('#cn').style.display='none'};rc();
+$('#bc').onclick=()=>{const v=$('#bi').value.replace(/\s/g,'').replace('−','-');$('#bf').textContent=/^\+?183(kj\/mol)?$/i.test(v)?'✅ Broken 945 + 498 = 1443. Made 2 × 630 = 1260. ΔH = 1443 − 1260 = +183 kJ/mol (endothermic).':/^-183/.test(v)?'🤔 Right size, wrong sign. Bonds broken take in more energy than is released.':'🤔 Add the bonds broken, then the bonds made, then subtract: broken − made.'};
+// Particle sim
+(()=>{const c=$('#cv'),x=c.getContext('2d'),W=340,H=200;let ps=[],fl=[],hits=[];const T=$('#tp'),C=$('#cn2'),K=$('#ct');
+function fit(){const n=+C.value*7;while(ps.length<n)ps.push({x:Math.random()*W,y:Math.random()*H,a:Math.random()*6.28,m:.5+Math.random(),cd:0});ps.length=n}
+function step(){fit();const s=T.value/18,thr=K.checked?2:5;x.clearRect(0,0,W,H);
+for(const p of ps){const v=s*p.m;p.v=v;p.x+=Math.cos(p.a)*v;p.y+=Math.sin(p.a)*v;if(p.x<5||p.x>W-5){p.a=Math.PI-p.a;p.x=Math.max(5,Math.min(W-5,p.x))}if(p.y<5||p.y>H-5){p.a=-p.a;p.y=Math.max(5,Math.min(H-5,p.y))}p.cd--}
+for(let i=0;i<ps.length;i++)for(let j=i+1;j<ps.length;j++){const a=ps[i],b=ps[j];if(a.cd>0||b.cd>0)continue;const dx=a.x-b.x,dy=a.y-b.y;if(dx*dx+dy*dy<100){a.cd=b.cd=25;if((a.v*a.v+b.v*b.v)/2>thr){hits.push(performance.now());fl.push({x:(a.x+b.x)/2,y:(a.y+b.y)/2,r:4})}a.a+=2.4;b.a-=2.4}}
+for(const p of ps){x.fillStyle=p.v*p.v>thr?'#ffd34d':'#7a8bff';x.beginPath();x.arc(p.x,p.y,5,0,6.28);x.fill()}
+fl=fl.filter(f=>f.r<22);for(const f of fl){x.strokeStyle='#3dffb0';x.lineWidth=3;x.beginPath();x.arc(f.x,f.y,f.r+=1.2,0,6.28);x.stroke()}}
+setInterval(()=>{const t=performance.now();hits=hits.filter(h=>t-h<3000);const r=(hits.length/3).toFixed(1);$('#rv').textContent=r;$('#rb').style.width=Math.min(100,r*4)+'%'},500);
+if(matchMedia('(prefers-reduced-motion:reduce)').matches)step();else(function l(){step();requestAnimationFrame(l)})()})();
+// Mg race
+const MG=[[20,160],[30,80],[40,40],[50,20]];$('#mg').innerHTML=MG.map(([t,s])=>`<div style="display:flex;gap:8px;align-items:center;margin:3px 0"><span style="width:60px">${t} °C</span><div class="bar" style="flex:1"><b style="width:${s/1.6}%"></b></div><span style="width:50px">${s} s</span></div>`).join('');
+$('#mc').onclick=()=>{const v=$('#mi').value.trim();$('#mf').textContent=v==10?'✅ The time halves for every 10 °C rise, so 20 ÷ 2 = 10 s. The rate doubles.':'🤔 Look at the pattern: 160, 80, 40, 20. What happens to the time each step?'};
+// Reaction profile
+const PF=P=>`M10 70L50 70C85 70 85 ${P} 120 ${P}C155 ${P} 160 120 195 120L250 120`;let pk=20;const setp=P=>{pk=P;$('#pf').setAttribute('d',PF(P));$('#ea').setAttribute('y1',70);$('#ea').setAttribute('y2',P+6)};setp(20);
+function cat(x){$('#cx').classList.toggle('on',!x);$('#cy').classList.toggle('on',x);tw(pk,x?55:20,setp);$('#ct2').textContent=x?'Lower peak: lower Eₐ, more particles can react. ΔH is unchanged.':'Without a catalyst the energy barrier is high.'}
+$('#cx').onclick=()=>cat(0);$('#cy').onclick=()=>cat(1);$('#ct2').textContent='Without a catalyst the energy barrier is high.';
+// CuSO4
+$('#th').onclick=()=>{$('#tb').style.background='#f4f4f4';$('#tt').textContent='♨️ White CuSO₄ left, and water droplets form on the cooler upper part of the tube.'};
+$('#tw').onclick=()=>{$('#tb').style.background='#2f6bff';$('#tt').textContent='💧 Blue again, and the tube gets hot: the reverse reaction is exothermic.'};
+// Equilibrium sim
+const EQ={h:[['Increase pressure',1,'4 mol of gas on the left, 2 mol on the right. Higher pressure favours fewer gas molecules: shifts RIGHT, more NH₃.'],['Increase temperature',-1,'Forward reaction is exothermic, so heat favours the endothermic reverse: shifts LEFT, yield of NH₃ falls.'],['Add iron catalyst',0,'Forward and reverse speed up equally: no change in position, equilibrium is reached faster.'],['Lower the temperature',1,'Favours the exothermic forward reaction, but the rate becomes too slow. Compromise: about 400 °C.']],
+n:[['Increase pressure',-1,'1 mol of gas on the left, 2 mol on the right. Favours fewer molecules: shifts LEFT, paler brown.'],['Increase temperature',1,'Forward is endothermic, so heat favours it: shifts RIGHT, darker brown.'],['Cool in ice water',-1,'Cooling favours the exothermic reverse reaction: shifts LEFT, paler (colourless N₂O₄).'],['Add a catalyst',0,'No change in position. Both rates increase equally.']]};
+let sys='h',pct=50;const tried=new Set();
+function eq(){$('#ec').innerHTML='';EQ[sys].forEach((c,i)=>{const b=document.createElement('button');b.textContent=c[0];b.onclick=()=>{const t=50+c[1]*25;tw(pct,t,v=>{pct=v;$('#gb').style.width=v+'%';if(sys=='n')$('#gt').style.background=`rgba(140,70,10,${v/100})`});$('#gf').textContent=(c[1]>0?'➡️ ':c[1]<0?'⬅️ ':'⏸️ ')+c[2];tried.add(sys+i)};$('#ec').append(b)});pct=50;$('#gb').style.width='50%';$('#gt').style.background=sys=='n'?'rgba(140,70,10,.5)':'#cfd6f5';$('#gf').textContent=''}
+$$('[data-s]').forEach(b=>b.onclick=()=>{$$('[data-s]').forEach(x=>x.classList.remove('on'));b.classList.add('on');sys=b.dataset.s;eq()});eq();
+$('#rg').onclick=()=>{const g=$('#gg');g.classList.remove('go');void g.getBoundingClientRect();g.classList.add('go')};
+</script></body></html>
